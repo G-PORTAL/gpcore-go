@@ -1,11 +1,11 @@
 package client
 
 import (
-	"buf.build/gen/go/gportal/gportal-cloud/grpc/go/gpcloud/api/auth/v1/authv1grpc"
-	"buf.build/gen/go/gportal/gportal-cloud/grpc/go/gpcloud/api/cloud/v1/cloudv1grpc"
-	"buf.build/gen/go/gportal/gportal-cloud/grpc/go/gpcloud/api/metadata/v1/metadatav1grpc"
-	"buf.build/gen/go/gportal/gportal-cloud/grpc/go/gpcloud/api/network/v1/networkv1grpc"
-	"buf.build/gen/go/gportal/gportal-cloud/grpc/go/gpcloud/api/payment/v1/paymentv1grpc"
+	"buf.build/gen/go/gportal/gpcore/grpc/go/gpcore/api/auth/v1/authv1grpc"
+	"buf.build/gen/go/gportal/gpcore/grpc/go/gpcore/api/cloud/v1/cloudv1grpc"
+	"buf.build/gen/go/gportal/gpcore/grpc/go/gpcore/api/metadata/v1/metadatav1grpc"
+	"buf.build/gen/go/gportal/gpcore/grpc/go/gpcore/api/network/v1/networkv1grpc"
+	"buf.build/gen/go/gportal/gpcore/grpc/go/gpcore/api/payment/v1/paymentv1grpc"
 	"crypto/tls"
 	"fmt"
 	"google.golang.org/grpc/credentials"
@@ -13,7 +13,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-const DefaultEndpoint = "grpc.g-portal.cloud:443"
+const DefaultEndpoint = "grpc.gpcore.io:443"
 
 type Client struct {
 	grpcClient *grpc.ClientConn
@@ -55,7 +55,7 @@ func NewClient(extraOptions ...interface{}) (*Client, error) {
 	options = append(options, grpc.WithTransportCredentials(credentials.NewTLS(getTLSOptions())))
 
 	// User Agent
-	options = append(options, grpc.WithUserAgent(fmt.Sprintf("GPCloud Golang Client [%s]", Version)))
+	options = append(options, grpc.WithUserAgent(fmt.Sprintf("GPCORE Golang Client [%s]", Version)))
 
 	endpoint := DefaultEndpoint
 	authenticationDefined := false
