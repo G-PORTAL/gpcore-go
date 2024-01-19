@@ -46,6 +46,11 @@ func (c *Client) PaymentClient() paymentv1grpc.PaymentServiceClient {
 	return paymentv1grpc.NewPaymentServiceClient(c.grpcClient)
 }
 
+// ClientConnection Returns the *grpc.ClientConn
+func (c *Client) ClientConnection() *grpc.ClientConn {
+	return c.grpcClient
+}
+
 // NewClient Returns a new GRPC client
 func NewClient(extraOptions ...interface{}) (*Client, error) {
 	cl := &Client{}
