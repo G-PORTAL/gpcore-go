@@ -3,8 +3,8 @@ module github.com/G-PORTAL/gpcore-go
 go 1.18
 
 require (
-	buf.build/gen/go/gportal/gpcore/grpc/go v1.3.0-20231205131303-5896269704d6.2
-	buf.build/gen/go/gportal/gpcore/protocolbuffers/go v1.31.0-20231205131303-5896269704d6.2
+	buf.build/gen/go/gportal/gpcore/grpc/go v1.3.0-20240214122508-3176bbe00a4d.2
+	buf.build/gen/go/gportal/gpcore/protocolbuffers/go v1.33.0-20240214122508-3176bbe00a4d.1
 	github.com/Nerzal/gocloak/v13 v13.8.0
 	google.golang.org/grpc v1.60.1
 )
@@ -20,5 +20,5 @@ require (
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231127180814-3a041ad873d4 // indirect
-	google.golang.org/protobuf v1.31.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 )
