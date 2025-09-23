@@ -3,10 +3,13 @@ package client
 import (
 	"context"
 	"fmt"
+
+	"github.com/Nerzal/gocloak/v13"
 )
 
 type AuthProviderOption interface {
 	GetToken(context.Context) (string, error)
+	Impersonate(token *gocloak.JWT)
 }
 
 type AuthOption struct {

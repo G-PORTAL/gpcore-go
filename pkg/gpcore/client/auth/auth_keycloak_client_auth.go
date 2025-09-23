@@ -5,8 +5,9 @@ package auth
 
 import (
 	"context"
-	"github.com/Nerzal/gocloak/v13"
 	"time"
+
+	"github.com/Nerzal/gocloak/v13"
 )
 
 type ProviderKeycloakClientAuth struct {
@@ -53,4 +54,16 @@ func (p *ProviderKeycloakClientAuth) GetToken(ctx context.Context) (string, erro
 		}
 	}
 	return p.tokenData.Token.AccessToken, nil
+}
+
+func (p *ProviderKeycloakClientAuth) Impersonate(token *gocloak.JWT) {
+	expireTime := time.Now().Add(time.Duration(token.ExpiresIn-10) * time.Second)
+
+	p.tokenData = &struct {
+		Token   *gocloak.JWT
+		Expires time.Time
+	}{
+		Token:   token,
+		Expires: expireTime,
+	}
 }
