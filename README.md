@@ -5,7 +5,7 @@ a problem or having a question.
 
 ## Recommendations
 
-- Golang 1.18 or higher
+- Golang 1.25 or higher
 
 ## Documentation
 
