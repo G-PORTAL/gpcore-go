@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	buf.build/gen/go/gportal/gpcore/grpc/go v1.6.1-20260316135506-01d4d7c6b8fb.1
 	github.com/Nerzal/gocloak/v13 v13.9.0
-	google.golang.org/grpc v1.81.0
+	google.golang.org/grpc v1.81.1
 )
 
 require (
